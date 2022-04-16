@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace Excell_On_Backend.Models
 {
@@ -16,5 +17,14 @@ namespace Excell_On_Backend.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Specification> Specifications { get; set; }
+        public DbSet<Specification_Employee> Specification_Employees { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetails> OrderDetails { get; set; }
+        public DbSet<OrderDetails_Employee> OrderDetails_Employees { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
+        public DbSet<TransactionHistory> TransactionHistories { get; set; }
     }
 }
