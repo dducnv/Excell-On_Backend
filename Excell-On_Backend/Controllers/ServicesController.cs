@@ -18,7 +18,7 @@ namespace Excell_On_Backend.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Services
-        public IQueryable<Service> GetServices()
+        public IEnumerable<Service> GetServices()
         {
             return db.Services;
         }

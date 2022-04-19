@@ -178,24 +178,26 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContractController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SpecificationsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204071445277_Init-Database.cs" />
-    <Compile Include="Migrations\202204071445277_Init-Database.Designer.cs">
-      <DependentUpon>202204071445277_Init-Database.cs</DependentUpon>
+    <Compile Include="Migrations\202204160447039_Init-Database.cs" />
+    <Compile Include="Migrations\202204160447039_Init-Database.designer.cs">
+      <DependentUpon>202204160447039_Init-Database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204150438046_add-full-table.cs" />
-    <Compile Include="Migrations\202204150438046_add-full-table.Designer.cs">
-      <DependentUpon>202204150438046_add-full-table.cs</DependentUpon>
+    <Compile Include="Migrations\202204160511485_update-db.cs" />
+    <Compile Include="Migrations\202204160511485_update-db.designer.cs">
+      <DependentUpon>202204160511485_update-db.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204150451390_add-fk-transHs.cs" />
-    <Compile Include="Migrations\202204150451390_add-fk-transHs.Designer.cs">
-      <DependentUpon>202204150451390_add-fk-transHs.cs</DependentUpon>
+    <Compile Include="Migrations\202204180303017_update-database.cs" />
+    <Compile Include="Migrations\202204180303017_update-database.designer.cs">
+      <DependentUpon>202204180303017_update-database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -217,6 +219,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ExcellOnDB.mdf" />
+    <Content Include="App_Data\ExcellOnDB_log.ldf">
+      <DependentUpon>ExcellOnDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -226,6 +232,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\Excell-On-Backend - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -251,9 +258,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
@@ -284,14 +289,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204071445277_Init-Database.resx">
-      <DependentUpon>202204071445277_Init-Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204160447039_Init-Database.resx">
+      <DependentUpon>202204160447039_Init-Database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204150438046_add-full-table.resx">
-      <DependentUpon>202204150438046_add-full-table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204160511485_update-db.resx">
+      <DependentUpon>202204160511485_update-db.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204150451390_add-fk-transHs.resx">
-      <DependentUpon>202204150451390_add-fk-transHs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202204180303017_update-database.resx">
+      <DependentUpon>202204180303017_update-database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -11,6 +11,6 @@ namespace Excell_On_Backend.Models
         public int ContractID { get; set; }
         public string CreatedAt { get; set; }
         public string UpdateAt { get; set; }
-        public virtual Contract Contract { get; set; }
+        public Contract Contract { get; set; }
     }
 }

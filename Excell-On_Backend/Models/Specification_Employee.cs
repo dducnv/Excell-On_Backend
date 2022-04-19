@@ -12,7 +12,7 @@ namespace Excell_On_Backend.Models
         public string AccountID { get; set; }
         public string CreatedAt { get; set; }
         public string UpdateAt { get; set; }
-        public virtual Account Account { get; set; }
-        public virtual Specification Specification { get; set; }
+        public Account Account { get; set; }
+        public Specification Specification { get; set; }
     }
 }

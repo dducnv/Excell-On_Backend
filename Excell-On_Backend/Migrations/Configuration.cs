@@ -1,23 +1,586 @@
-namespace Excell_On_Backend.Migrations
+﻿namespace Excell_On_Backend.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Excell_On_Backend.Models;
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Diagnostics;
     using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<Excell_On_Backend.Models.ApplicationDbContext>
+    using System.Threading.Tasks;
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Excell_On_Backend.Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            ClearData(context);
+            ResetAutoIncrement(context);
+            AddRoles(context);
+            AddUser(context);
+            AddRoleUser(context);
+            AddService(context);
+            AddSpecifications(context);
+            AddOder(context);
+            AddOderDetails(context);
+            addOrderDetailsEmployee(context);
+            addContract(context);
+            context.SaveChanges();
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+        private void addContract(ApplicationDbContext context)
+        {
+            var date = DateTime.Now;
+            context.Contracts.Add(new Contract() { 
+                Id = 1,
+                OrderID = 1,
+                PriceTotal = 6000 * 10,
+                StartDate = "18/04/2022",
+                EndDate = "18/05/2022",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy")
+            });
+            context.Contracts.Add(new Contract()
+            {
+                Id = 2,
+                OrderID = 2,
+                PriceTotal = 4500 * 11,
+                StartDate = "18/04/2022",
+                EndDate = "18/05/2022",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy")
+            });
+        }
+
+        private void addOrderDetailsEmployee(ApplicationDbContext context)
+        {
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 1,
+                AccountID = "EP001",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 2,
+                AccountID = "EP002",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 3,
+                AccountID = "EP003",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 4,
+                AccountID = "EP004",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 5,
+                AccountID = "EP005",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 6,
+                AccountID = "EP006",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 7,
+                AccountID = "EP007",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 8,
+                AccountID = "EP008",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 9,
+                AccountID = "EP009",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 10,
+                AccountID = "EP0010",
+                OrderDetailsID = 1,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 12,
+                AccountID = "EP0011",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 13,
+                AccountID = "EP0012",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 14,
+                AccountID = "EP0013",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 15,
+                AccountID = "EP0014",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 16,
+                AccountID = "EP0015",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 17,
+                AccountID = "EP0016",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 18,
+                AccountID = "EP0017",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 19,
+                AccountID = "EP0018",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 20,
+                AccountID = "EP0019",
+                OrderDetailsID = 2,
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 21,
+                AccountID = "EP0020",
+                OrderDetailsID = 2,
+            });
+            context.SaveChanges();
+        }
+        private void AddOderDetails(ApplicationDbContext context)
+        {
+            var date = DateTime.Now;
+            context.OrderDetails.Add(new OrderDetails() { 
+                Id = 1,
+                OrderID = 1,
+                ServiceID = 2,
+                SpecificationID = 3,
+                Qty = 10,
+                UnitPrice = 6000 * 10,
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy")
+            });
+            context.OrderDetails.Add(new OrderDetails()
+            {
+                Id = 2,
+                OrderID = 2,
+                ServiceID = 1,
+                SpecificationID = 1,
+                Qty = 11,
+                UnitPrice = 4500 * 11,
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy")
+            });
+            context.SaveChanges();
+        }
+        private void AddOder(ApplicationDbContext context)
+        {
+            var date = DateTime.Now;
+            context.Orders.Add(new Order()
+            {
+                Id = 1,
+                AccountID = "US0001",
+                StartDate = "18/04/2022",
+                EndDate = "18/05/2022",
+                Status = 0,
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy")
+            });
+            context.Orders.Add(new Order()
+            {
+                Id = 2,
+                AccountID = "US0002",
+                StartDate = "14/04/2022",
+                EndDate = "14/05/2022",
+                Status = 1,
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy")
+            });
+            context.SaveChanges();
+        }
+        private void AddRoleUser(ApplicationDbContext context)
+        {
+            var userStore = new UserStore<Account>(context);
+            var userManager = new UserManager<Account>(userStore);
+            int n = 300;
+            for (int i = 0; i < n; i++)
+            {
+                userManager.AddToRole("EP00"+i, "EMPLOYEE");
+            }
+            context.SaveChanges();
+        }
+        private void AddUser(ApplicationDbContext context)
+        {
+            var userStore = new UserStore<Account>(context);
+            var userManager = new UserManager<Account>(userStore);
+            Random rnd = new Random();
+            DateTime datetoday = DateTime.Now;
+            int rndYear = rnd.Next(1978, datetoday.Year);
+            int rndMonth = rnd.Next(1, 12);
+            int rndDay = rnd.Next(1, 31);
+            DateTime generateDate = new DateTime(rndYear, rndMonth, rndDay);
+            context.Users.Add(new Account()
+            {
+                Id = "US0001",
+                FullName = "Nguyễn Hồng Quang",
+                UserName = "hongquang",
+                Email = "hongquang@gmail.com",
+                PhoneNumber = "0383557844",
+                Gender = 0,
+                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
+            });
+            context.Users.Add(new Account()
+            {
+                Id = "US0002",
+                FullName = "Nguyễn Văn Đức",
+                UserName = "ducnv",
+                Email = "ducnv@gmail.com",
+                PhoneNumber = "0383557845",
+                Gender = 0,
+                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
+            });
+
+            context.Users.Add(new Account()
+            {
+                Id = "US0003",
+                FullName = "Dương Quỳnh Anh",
+                UserName = "quynhanh",
+                Email = "quynhanh@gmail.com",
+                PhoneNumber = "0383557846",
+                Gender = 1,
+                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
+            });
+            context.Users.Add(new Account()
+            {
+                Id = "US0004",
+                FullName = "Đinh Việt Hoàng",
+                UserName = "viethoang",
+                Email = "viethoang@gmail.com",
+                PhoneNumber = "0383557847",
+                Gender = 0,
+                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
+            });
+            context.Users.Add(new Account()
+            {
+                Id = "US0005",
+                FullName = "Trần Duy Quân",
+                UserName = "duyquan",
+                Email = "duyquan@gmail.com",
+                PhoneNumber = "0383557848",
+                Gender = 0,
+                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
+            });
+            context.Users.Add(new Account()
+            {
+                Id = "US0006",
+                FullName = "Nguyễn Thanh Tùng",
+                UserName = "thanhtung",
+                Email = "thanhtung@gmail.com",
+                PhoneNumber = "0383557849",
+                Gender = 0,
+                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
+            });
+            context.Users.Add(new Account()
+            {
+                Id = "US0007",
+                FullName = "Vương Văn Hiếu",
+                UserName = "vuonghieu",
+                Email = "vuonghieu@gmail.com",
+                PhoneNumber = "0383557810",
+                Gender = 0,
+                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
+            });
+            int n = 300;
+            for (int i = 0; i < n; i++)
+            {
+                context.Users.Add(new Account()
+                {
+                    Id = "EP00" + i,
+                    FullName = "Employee " + i,
+                    UserName = "employee" + i,
+                    Email = "employee" + i + "@gmail.com",
+                    PhoneNumber = "03835578" + i,
+                    Gender = 0,
+                    Birthday = generateDate.ToString("dd/MM/yyyy"),
+                    PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
+                });
+            }
+            context.SaveChanges();
+
+        }
+        private void AddSpecifications(ApplicationDbContext context)
+        {
+            var date = DateTime.Now;
+            context.Specifications.Add(new Specification()
+            {
+                Id = 1,
+                Name = "Admissions",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 2,
+                Name = "Construct",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 3,
+                Name = "Information Technology",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 4,
+                Name = "Commerce",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 5,
+                Name = "Transport",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 6,
+                Name = "Transport",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 7,
+                Name = "Medical",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 8,
+                Name = "Bank",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 9,
+                Name = "Insurance",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 10,
+                Name = "Real estate business",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 11,
+                Name = "Hotel",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 12,
+                Name = "Travel",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 13,
+                Name = "Air",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Specifications.Add(new Specification()
+            {
+                Id = 14,
+                Name = "Post and Telecommunication",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+        }
+        private void AddService(ApplicationDbContext context)
+        {
+            var date = DateTime.Now;
+            context.Services.Add(new Service()
+            {
+                Id = 1,
+                Image = "https://res.cloudinary.com/blogcuaduc/image/upload/v1650257236/cua-toi/dpsjbxx9nmng5kumde5x.png",
+                Name = "In-bound",
+                Price = "4500",
+                Description = "The In-bound service is a service in which one can only receive" +
+                " the calls from the customers.These call centers provide 24 hours service" +
+                " to all customers.The primary goal of these call centers are to receive" +
+                " product orders, help customers both technically and non - technically," +
+                " to find dealer location.",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Services.Add(new Service()
+            {
+                Id = 2,
+                Image = "https://res.cloudinary.com/blogcuaduc/image/upload/v1650257236/cua-toi/gpmim7pc8nfdqha2cdwo.jpg",
+                Name = "Out-bound",
+                Price = "6000",
+                Description = "The Out-bound service is a service in which the " +
+                "employees of Excell - on call the customers for product promotions, for " +
+                "checking with the customer satisfaction on the services they provide, and for " +
+                "the telemarketing. Outbound Call Centers depends on the technological " +
+                "solutions, extensive experience, quality assurance programs and commitment " +
+                "to customer service excellence that further ensures maximum results from " +
+                "the direct marketing efforts for its success.",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+            context.Services.Add(new Service()
+            {
+                Id = 3,
+                Image = "https://res.cloudinary.com/blogcuaduc/image/upload/v1650257236/cua-toi/gwgxtvfecujbmlmcjzet.jpg",
+                Name = "Tele Marketing",
+                Price = "4500",
+                Description = "The Tele Marketing service is a service which is " +
+                "purely for the promotion of marketing or sales of the products and services.",
+                CreatedAt = date.ToString("dd/MM/yyyy"),
+                UpdateAt = date.ToString("dd/MM/yyyy"),
+            });
+        }
+        private void AddRoles(ApplicationDbContext context)
+        {
+            context.Roles.Add(new Role()
+            {
+                Id = "R00001",
+                Name = "ADMIN"
+            });
+            context.Roles.Add(new Role()
+            {
+                Id = "R00002",
+                Name = "EMPLOYEE"
+            });
+            context.SaveChanges();
+        }
+        private void ResetAutoIncrement(ApplicationDbContext context)
+        {
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Orders', RESEED, 0);");
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Specifications', RESEED, 0);");
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Services', RESEED, 0);");
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Contracts', RESEED, 0);");
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.TransactionHistories', RESEED, 0);");
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.OrderDetails_Employee', RESEED, 0);");
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.OrderDetails', RESEED, 0);");
+            context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Specification_Employee', RESEED, 0);");
+        }
+        private void ClearData(ApplicationDbContext context)
+        {
+            var transaction = context.TransactionHistories.ToList();
+            foreach (var item in transaction)
+            {
+                context.TransactionHistories.Remove(item);
+            }
+
+            var contract = context.Contracts.ToList();
+            foreach (var item in contract)
+            {
+                context.Contracts.Remove(item);
+            }
+
+            var spe = context.Specification_Employees.ToList();
+            foreach (var item in spe)
+            {
+                context.Specification_Employees.Remove(item);
+            }
+            var OrderdetailsE = context.OrderDetails_Employees.ToList();
+            foreach (var item in OrderdetailsE)
+            {
+                context.OrderDetails_Employees.Remove(item);
+            }
+
+            var Orderdetails = context.OrderDetails.ToList();
+            foreach (var item in Orderdetails)
+            {
+                context.OrderDetails.Remove(item);
+            }
+            var Order = context.Orders.ToList();
+            foreach (var item in Order)
+            {
+                context.Orders.Remove(item);
+            }
+            var Spec = context.Specifications.ToList();
+            foreach (var item in Spec)
+            {
+                context.Specifications.Remove(item);
+            }
+            var Service = context.Services.ToList();
+            foreach (var item in Service)
+            {
+                context.Services.Remove(item);
+            }
+            // Clear users.
+            var users = context.Users.ToList();
+            foreach (var item in users)
+            {
+                context.Users.Remove(item);
+            }
+            // Clear roles.
+            var roles = context.Roles.ToList();
+            foreach (var item in roles)
+            {
+                context.Roles.Remove(item);
+            }
+            Debug.WriteLine(roles.Count);
+            context.SaveChanges();
         }
     }
 }

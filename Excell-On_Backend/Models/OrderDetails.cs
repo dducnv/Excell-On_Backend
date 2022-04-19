@@ -15,9 +15,9 @@ namespace Excell_On_Backend.Models
         public decimal UnitPrice { get; set; }
         public string CreatedAt { get; set; }
         public string UpdateAt { get; set; }
-        public virtual Order Order { get; set; }
-        public virtual Service Service { get; set; }
-        public virtual Specification Specification { get; set; }
-        public virtual ICollection<OrderDetails_Employee> OrderDetails_Employees { get; set; }
+        public Order Order { get; set; }
+        public Service Service { get; set; }
+        public Specification Specification { get; set; }
+        public ICollection<OrderDetails_Employee> OrderDetails_Employees { get; set; }
     }
 }

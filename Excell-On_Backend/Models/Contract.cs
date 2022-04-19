@@ -14,7 +14,7 @@ namespace Excell_On_Backend.Models
         public string EndDate { get; set; }
         public string CreatedAt { get; set; }
         public string UpdateAt { get; set; }
-        public virtual Order Order { get; set; }
-        public virtual ICollection<TransactionHistory> TransactionHistories { get; set; }
+        public Order Order { get; set; }
+        public ICollection<TransactionHistory> TransactionHistories { get; set; }
     }
 }
