@@ -7,13 +7,13 @@ namespace Excell_On_Backend.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class updatedatabase : IMigrationMetadata
+    public sealed partial class InitDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202204180303017_update-database"; }
+            get { return "202204300307167_Init-Database"; }
         }
         
         string IMigrationMetadata.Source

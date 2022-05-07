@@ -14,10 +14,11 @@
                         Id = c.Int(nullable: false, identity: true),
                         OrderID = c.Int(nullable: false),
                         PriceTotal = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        StartDate = c.String(),
-                        EndDate = c.String(),
-                        CreatedAt = c.String(),
-                        UpdateAt = c.String(),
+                        StartDate = c.DateTime(nullable: false),
+                        EndDate = c.DateTime(nullable: false),
+                        Status = c.Int(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdateAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Orders", t => t.OrderID, cascadeDelete: true)
@@ -29,11 +30,11 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         AccountID = c.String(maxLength: 128),
-                        StartDate = c.String(),
-                        EndDate = c.String(),
                         Status = c.Int(nullable: false),
-                        CreatedAt = c.String(),
-                        UpdateAt = c.String(),
+                        GrandTotal = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Deposit = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdateAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.AccountID)
@@ -96,8 +97,8 @@
                         Id = c.Int(nullable: false, identity: true),
                         AccountID = c.String(maxLength: 128),
                         OrderDetailsID = c.Int(nullable: false),
-                        CreatedAt = c.String(),
-                        UpdateAt = c.String(),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdateAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.AccountID)
@@ -114,9 +115,12 @@
                         ServiceID = c.Int(nullable: false),
                         SpecificationID = c.Int(nullable: false),
                         Qty = c.Int(nullable: false),
+                        StartDate = c.DateTime(nullable: false),
+                        EndDate = c.DateTime(nullable: false),
                         UnitPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        CreatedAt = c.String(),
-                        UpdateAt = c.String(),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdateAt = c.DateTime(nullable: false),
+                        Status = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Orders", t => t.OrderID, cascadeDelete: true)
@@ -131,11 +135,12 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Image = c.String(),
                         Name = c.String(),
-                        Price = c.String(),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Description = c.String(),
-                        CreatedAt = c.String(),
-                        UpdateAt = c.String(),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdateAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -144,9 +149,9 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.Int(nullable: false),
-                        CreatedAt = c.String(),
-                        UpdateAt = c.String(),
+                        Name = c.String(),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdateAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -157,8 +162,8 @@
                         Id = c.Int(nullable: false, identity: true),
                         SpecificationID = c.Int(nullable: false),
                         AccountID = c.String(maxLength: 128),
-                        CreatedAt = c.String(),
-                        UpdateAt = c.String(),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdateAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.AccountID)
@@ -185,8 +190,11 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         ContractID = c.Int(nullable: false),
-                        CreatedAt = c.String(),
-                        UpdateAt = c.String(),
+                        PriceSent = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        InDebt = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Status = c.Int(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        UpdateAt = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Contracts", t => t.ContractID, cascadeDelete: true)

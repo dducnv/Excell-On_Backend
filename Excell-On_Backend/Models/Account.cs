@@ -22,9 +22,10 @@ namespace Excell_On_Backend.Models
         public int Gender { get; set; }
         public string CitizenID { get; set; }
         public string Birthday { get; set; }
-        public ICollection<Specification_Employee> Specification_Employees { get; set; }
-        public ICollection<OrderDetails_Employee> OrderDetails_Employees { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public string Address { get; set; }
+        public virtual ICollection<Specification_Employee> Specification_Employees { get; set; }
+        public virtual ICollection<OrderDetails_Employee> OrderDetails_Employees { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
    
     }
 }

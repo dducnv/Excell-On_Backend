@@ -18,11 +18,10 @@ namespace Excell_On_Backend.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Specifications
-        public IQueryable<Specification> GetSpecifications()
+        public IEnumerable<Specification> GetSpecifications()
         {
-            return db.Specifications;
+            return db.Specifications.ToList();
         }
-
         // GET: api/Specifications/5
         [ResponseType(typeof(Specification))]
         public async Task<IHttpActionResult> GetSpecification(int id)
@@ -75,12 +74,20 @@ namespace Excell_On_Backend.Controllers
         [ResponseType(typeof(Specification))]
         public async Task<IHttpActionResult> PostSpecification(Specification specification)
         {
+            var dateNow = DateTime.Now;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            Specification specificationModel = new Specification()
+            {
+                Name = specification.Name,
+                CreatedAt = dateNow,
+                UpdateAt = dateNow
 
-            db.Specifications.Add(specification);
+            };
+            db.Specifications.Add(specificationModel);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = specification.Id }, specification);

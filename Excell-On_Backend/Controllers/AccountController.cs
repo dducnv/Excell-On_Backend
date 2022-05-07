@@ -13,8 +13,10 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Excell_On_Backend.Models;
+using Excell_On_Backend;
 using Excell_On_Backend.Providers;
 using Excell_On_Backend.Results;
+using System.Web.Http.Cors;
 
 namespace Excell_On_Backend.Controllers
 {
@@ -53,13 +55,15 @@ namespace Excell_On_Backend.Controllers
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("UserInfo")]
+        [DisableCors]
         public UserInfoViewModel GetUserInfo()
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
 
             return new UserInfoViewModel
             {
-                Email = User.Identity.GetUserName(),
+                UserName = User.Identity.GetUserName(),
+                Email = User.Identity.GetUserId(),
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
@@ -320,6 +324,7 @@ namespace Excell_On_Backend.Controllers
         // POST api/Account/Register
         [AllowAnonymous]
         [Route("Register")]
+        [DisableCors]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {
             if (!ModelState.IsValid)
@@ -329,9 +334,9 @@ namespace Excell_On_Backend.Controllers
 
             var user = new Account() { 
                 FullName = model.FullName,
-                UserName = model.Email,
-                Email = model.Email
-            
+                UserName = model.UserName,
+                Email = model.Email,
+                Address = model.Address
             };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);

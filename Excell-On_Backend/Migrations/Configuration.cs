@@ -27,209 +27,478 @@
             AddRoleUser(context);
             AddService(context);
             AddSpecifications(context);
-            AddOder(context);
+            AddOrder(context);
             AddOderDetails(context);
             addOrderDetailsEmployee(context);
             addContract(context);
+            AddSpecificationsEmployee(context);
             context.SaveChanges();
+        }
+
+        private void AddSpecificationsEmployee(ApplicationDbContext context)
+        {
+            var date = DateTime.Now;
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 1,
+                SpecificationID = 3,
+                AccountID = "EP001",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 2,
+                SpecificationID = 3,
+                AccountID = "EP002",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 3,
+                SpecificationID = 3,
+                AccountID = "EP003",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 4,
+                SpecificationID = 3,
+                AccountID = "EP004",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 5,
+                SpecificationID = 3,
+                AccountID = "EP005",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 6,
+                SpecificationID = 3,
+                AccountID = "EP006",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 7,
+                SpecificationID = 3,
+                AccountID = "EP007",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 8,
+                SpecificationID = 3,
+                AccountID = "EP008",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 9,
+                SpecificationID = 3,
+                AccountID = "EP009",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 10,
+                SpecificationID = 3,
+                AccountID = "EP0010",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 11,
+                SpecificationID = 3,
+                AccountID = "EP0011",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 12,
+                SpecificationID = 3,
+                AccountID = "EP0012",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 13,
+                SpecificationID = 3,
+                AccountID = "EP0012",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 14,
+                SpecificationID = 3,
+                AccountID = "EP0014",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 15,
+                SpecificationID = 3,
+                AccountID = "EP0015",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 16,
+                SpecificationID = 3,
+                AccountID = "EP0016",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 17,
+                SpecificationID = 3,
+                AccountID = "EP0017",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 18,
+                SpecificationID = 3,
+                AccountID = "EP0018",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 19,
+                SpecificationID = 3,
+                AccountID = "EP0019",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 20,
+                SpecificationID = 3,
+                AccountID = "EP0020",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 21,
+                SpecificationID = 3,
+                AccountID = "EP0021",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 22,
+                SpecificationID = 3,
+                AccountID = "EP0022",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 23,
+                SpecificationID = 3,
+                AccountID = "EP0023",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 24,
+                SpecificationID = 3,
+                AccountID = "EP0024",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 25,
+                SpecificationID = 3,
+                AccountID = "EP0025",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 26,
+                SpecificationID = 3,
+                AccountID = "EP0026",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 27,
+                SpecificationID = 3,
+                AccountID = "EP0027",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 28,
+                SpecificationID = 3,
+                AccountID = "EP0028",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 29,
+                SpecificationID = 3,
+                AccountID = "EP0029",
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.Specification_Employees.Add(new Specification_Employee()
+            {
+                Id = 30,
+                SpecificationID = 3,
+                AccountID = "EP0030",
+                CreatedAt = date,
+                UpdateAt = date
+            });
         }
 
         private void addContract(ApplicationDbContext context)
         {
             var date = DateTime.Now;
-            context.Contracts.Add(new Contract() { 
+
+            context.Contracts.Add(new Contract()
+            {
                 Id = 1,
                 OrderID = 1,
                 PriceTotal = 6000 * 10,
-                StartDate = "18/04/2022",
-                EndDate = "18/05/2022",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy")
+                StartDate = Convert.ToDateTime("04/18/2022"),
+                EndDate = Convert.ToDateTime("05/18/2022"),
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.Contracts.Add(new Contract()
             {
                 Id = 2,
                 OrderID = 2,
                 PriceTotal = 4500 * 11,
-                StartDate = "18/04/2022",
-                EndDate = "18/05/2022",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy")
+                StartDate = Convert.ToDateTime("04/18/2022"),
+                EndDate = Convert.ToDateTime("04/18/2022"),
+                CreatedAt = date,
+                UpdateAt = date
             });
         }
 
         private void addOrderDetailsEmployee(ApplicationDbContext context)
         {
+            var date = DateTime.Now;
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 1,
                 AccountID = "EP001",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 2,
                 AccountID = "EP002",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 3,
                 AccountID = "EP003",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 4,
                 AccountID = "EP004",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 5,
                 AccountID = "EP005",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 6,
                 AccountID = "EP006",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 7,
                 AccountID = "EP007",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 8,
                 AccountID = "EP008",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 9,
                 AccountID = "EP009",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 10,
                 AccountID = "EP0010",
                 OrderDetailsID = 1,
+                CreatedAt = date,
+                UpdateAt = date
+            });
+            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
+            {
+                Id = 11,
+                AccountID = "EP0011",
+                OrderDetailsID = 2,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 12,
-                AccountID = "EP0011",
+                AccountID = "EP0012",
                 OrderDetailsID = 2,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 13,
-                AccountID = "EP0012",
+                AccountID = "EP0013",
                 OrderDetailsID = 2,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 14,
-                AccountID = "EP0013",
+                AccountID = "EP0014",
                 OrderDetailsID = 2,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 15,
-                AccountID = "EP0014",
+                AccountID = "EP0015",
                 OrderDetailsID = 2,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 16,
-                AccountID = "EP0015",
+                AccountID = "EP0016",
                 OrderDetailsID = 2,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails_Employees.Add(new OrderDetails_Employee()
             {
                 Id = 17,
-                AccountID = "EP0016",
-                OrderDetailsID = 2,
-            });
-            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
-            {
-                Id = 18,
                 AccountID = "EP0017",
                 OrderDetailsID = 2,
-            });
-            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
-            {
-                Id = 19,
-                AccountID = "EP0018",
-                OrderDetailsID = 2,
-            });
-            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
-            {
-                Id = 20,
-                AccountID = "EP0019",
-                OrderDetailsID = 2,
-            });
-            context.OrderDetails_Employees.Add(new OrderDetails_Employee()
-            {
-                Id = 21,
-                AccountID = "EP0020",
-                OrderDetailsID = 2,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.SaveChanges();
         }
         private void AddOderDetails(ApplicationDbContext context)
         {
             var date = DateTime.Now;
-            context.OrderDetails.Add(new OrderDetails() { 
+
+            context.OrderDetails.Add(new OrderDetails()
+            {
                 Id = 1,
-                OrderID = 1,
-                ServiceID = 2,
+                OrderID = 2,
+                ServiceID = 1,
                 SpecificationID = 3,
-                Qty = 10,
-                UnitPrice = 6000 * 10,
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy")
+                StartDate = Convert.ToDateTime("04/18/2022"),
+                EndDate = Convert.ToDateTime("06/10/2022"),
+                Status =0,
+                Qty = 11,
+                UnitPrice = 4500 * 11,
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.OrderDetails.Add(new OrderDetails()
             {
                 Id = 2,
                 OrderID = 2,
-                ServiceID = 1,
-                SpecificationID = 1,
+                ServiceID = 2,
+                SpecificationID = 3,
+                StartDate = Convert.ToDateTime("06/20/2022"),
+                EndDate = Convert.ToDateTime("07/18/2022"),
+                Status = 0,
                 Qty = 11,
                 UnitPrice = 4500 * 11,
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy")
+                CreatedAt = date,
+                UpdateAt = date
             });
-            context.SaveChanges();
         }
-        private void AddOder(ApplicationDbContext context)
+      
+        private void AddOrder(ApplicationDbContext context)
         {
             var date = DateTime.Now;
             context.Orders.Add(new Order()
             {
                 Id = 1,
                 AccountID = "US0001",
-                StartDate = "18/04/2022",
-                EndDate = "18/05/2022",
                 Status = 0,
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy")
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.Orders.Add(new Order()
             {
                 Id = 2,
                 AccountID = "US0002",
-                StartDate = "14/04/2022",
-                EndDate = "14/05/2022",
                 Status = 1,
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy")
+                CreatedAt = date,
+                UpdateAt = date
             });
             context.SaveChanges();
         }
@@ -237,10 +506,10 @@
         {
             var userStore = new UserStore<Account>(context);
             var userManager = new UserManager<Account>(userStore);
-            int n = 300;
+            int n = 100;
             for (int i = 0; i < n; i++)
             {
-                userManager.AddToRole("EP00"+i, "EMPLOYEE");
+                userManager.AddToRole("EP00" + i, "EMPLOYEE");
             }
             context.SaveChanges();
         }
@@ -262,7 +531,8 @@
                 Email = "hongquang@gmail.com",
                 PhoneNumber = "0383557844",
                 Gender = 0,
-                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                Address = "Số 8, Tôn Thất Thuyết, Mỹ Đình",
+                Birthday = generateDate.ToString("MM/dd/yyyy"),
                 PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
             });
             context.Users.Add(new Account()
@@ -272,8 +542,9 @@
                 UserName = "ducnv",
                 Email = "ducnv@gmail.com",
                 PhoneNumber = "0383557845",
+                Address = "Số 8, Tôn Thất Thuyết, Mỹ Đình",
                 Gender = 0,
-                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                Birthday = generateDate.ToString("MM/dd/yyyy"),
                 PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
             });
 
@@ -285,7 +556,8 @@
                 Email = "quynhanh@gmail.com",
                 PhoneNumber = "0383557846",
                 Gender = 1,
-                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                Address = "Số 8, Tôn Thất Thuyết, Mỹ Đình",
+                Birthday = generateDate.ToString("MM/dd/yyyy"),
                 PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
             });
             context.Users.Add(new Account()
@@ -296,7 +568,8 @@
                 Email = "viethoang@gmail.com",
                 PhoneNumber = "0383557847",
                 Gender = 0,
-                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                Address = "Số 8, Tôn Thất Thuyết, Mỹ Đình",
+                Birthday = generateDate.ToString("MM/dd/yyyy"),
                 PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
             });
             context.Users.Add(new Account()
@@ -307,7 +580,8 @@
                 Email = "duyquan@gmail.com",
                 PhoneNumber = "0383557848",
                 Gender = 0,
-                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                Address = "Số 8, Tôn Thất Thuyết, Mỹ Đình",
+                Birthday = generateDate.ToString("MM/dd/yyyy"),
                 PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
             });
             context.Users.Add(new Account()
@@ -318,7 +592,8 @@
                 Email = "thanhtung@gmail.com",
                 PhoneNumber = "0383557849",
                 Gender = 0,
-                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                Address = "Số 8, Tôn Thất Thuyết, Mỹ Đình",
+                Birthday = generateDate.ToString("MM/dd/yyyy"),
                 PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
             });
             context.Users.Add(new Account()
@@ -328,11 +603,12 @@
                 UserName = "vuonghieu",
                 Email = "vuonghieu@gmail.com",
                 PhoneNumber = "0383557810",
+                Address = "Số 8, Tôn Thất Thuyết, Mỹ Đình",
                 Gender = 0,
-                Birthday = generateDate.ToString("dd/MM/yyyy"),
+                Birthday = generateDate.ToString("MM/dd/yyyy"),
                 PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
             });
-            int n = 300;
+            int n = 100;
             for (int i = 0; i < n; i++)
             {
                 context.Users.Add(new Account()
@@ -343,7 +619,7 @@
                     Email = "employee" + i + "@gmail.com",
                     PhoneNumber = "03835578" + i,
                     Gender = 0,
-                    Birthday = generateDate.ToString("dd/MM/yyyy"),
+                    Birthday = generateDate.ToString("MM/dd/yyyy"),
                     PasswordHash = userManager.PasswordHasher.HashPassword("User@123")
                 });
             }
@@ -357,99 +633,99 @@
             {
                 Id = 1,
                 Name = "Admissions",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 2,
                 Name = "Construct",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 3,
                 Name = "Information Technology",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 4,
                 Name = "Commerce",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 5,
                 Name = "Transport",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 6,
                 Name = "Transport",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 7,
                 Name = "Medical",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 8,
                 Name = "Bank",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 9,
                 Name = "Insurance",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 10,
                 Name = "Real estate business",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 11,
                 Name = "Hotel",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 12,
                 Name = "Travel",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 13,
                 Name = "Air",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Specifications.Add(new Specification()
             {
                 Id = 14,
                 Name = "Post and Telecommunication",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
         }
         private void AddService(ApplicationDbContext context)
@@ -460,21 +736,21 @@
                 Id = 1,
                 Image = "https://res.cloudinary.com/blogcuaduc/image/upload/v1650257236/cua-toi/dpsjbxx9nmng5kumde5x.png",
                 Name = "In-bound",
-                Price = "4500",
+                Price = 4500,
                 Description = "The In-bound service is a service in which one can only receive" +
                 " the calls from the customers.These call centers provide 24 hours service" +
                 " to all customers.The primary goal of these call centers are to receive" +
                 " product orders, help customers both technically and non - technically," +
                 " to find dealer location.",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Services.Add(new Service()
             {
                 Id = 2,
                 Image = "https://res.cloudinary.com/blogcuaduc/image/upload/v1650257236/cua-toi/gpmim7pc8nfdqha2cdwo.jpg",
                 Name = "Out-bound",
-                Price = "6000",
+                Price = 6000,
                 Description = "The Out-bound service is a service in which the " +
                 "employees of Excell - on call the customers for product promotions, for " +
                 "checking with the customer satisfaction on the services they provide, and for " +
@@ -482,19 +758,19 @@
                 "solutions, extensive experience, quality assurance programs and commitment " +
                 "to customer service excellence that further ensures maximum results from " +
                 "the direct marketing efforts for its success.",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
             context.Services.Add(new Service()
             {
                 Id = 3,
                 Image = "https://res.cloudinary.com/blogcuaduc/image/upload/v1650257236/cua-toi/gwgxtvfecujbmlmcjzet.jpg",
                 Name = "Tele Marketing",
-                Price = "4500",
+                Price = 5500,
                 Description = "The Tele Marketing service is a service which is " +
                 "purely for the promotion of marketing or sales of the products and services.",
-                CreatedAt = date.ToString("dd/MM/yyyy"),
-                UpdateAt = date.ToString("dd/MM/yyyy"),
+                CreatedAt = date,
+                UpdateAt = date,
             });
         }
         private void AddRoles(ApplicationDbContext context)

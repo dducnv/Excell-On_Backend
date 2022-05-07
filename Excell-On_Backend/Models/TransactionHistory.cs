@@ -9,8 +9,11 @@ namespace Excell_On_Backend.Models
     {
         public int Id { get; set; }
         public int ContractID { get; set; }
-        public string CreatedAt { get; set; }
-        public string UpdateAt { get; set; }
-        public Contract Contract { get; set; }
+        public decimal PriceSent { get; set; }
+        public decimal InDebt { get; set; }
+        public int Status { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdateAt { get; set; }
+        public virtual Contract Contract { get; set; }
     }
 }

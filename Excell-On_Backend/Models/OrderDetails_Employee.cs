@@ -10,10 +10,10 @@ namespace Excell_On_Backend.Models
         public int Id { get; set; }
         public string AccountID { get; set; }
         public int OrderDetailsID { get; set; }
-        public string CreatedAt { get; set; }
-        public string UpdateAt { get; set; }
-        public Account Account { get; set; }
-        public OrderDetails OrderDetails { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdateAt { get; set; }
+        public virtual Account Account { get; set; }
+        public virtual OrderDetails OrderDetails { get; set; }
 
     }
 }

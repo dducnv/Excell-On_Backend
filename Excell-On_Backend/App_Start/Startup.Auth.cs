@@ -10,9 +10,12 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Excell_On_Backend.Providers;
 using Excell_On_Backend.Models;
-
+using System.Web.Http.Cors;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.Owin.Cors;
 namespace Excell_On_Backend
 {
+  
     public partial class Startup
     {
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
@@ -22,6 +25,7 @@ namespace Excell_On_Backend
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             // Configure the db context and user manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -33,6 +37,7 @@ namespace Excell_On_Backend
 
             // Configure the application for OAuth based flow
             PublicClientId = "self";
+
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString("/Token"),

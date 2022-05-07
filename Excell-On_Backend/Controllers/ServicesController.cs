@@ -20,7 +20,7 @@ namespace Excell_On_Backend.Controllers
         // GET: api/Services
         public IEnumerable<Service> GetServices()
         {
-            return db.Services;
+            return db.Services.ToList();
         }
 
         // GET: api/Services/5
@@ -75,12 +75,21 @@ namespace Excell_On_Backend.Controllers
         [ResponseType(typeof(Service))]
         public async Task<IHttpActionResult> PostService(Service service)
         {
+            var dateNow = DateTime.Now;
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            db.Services.Add(service);
+            Service serviceModel = new Service()
+            {
+                Name = service.Name,
+                Image = service.Image,
+                Price = service.Price,
+                Description = service.Description,
+                UpdateAt = dateNow,
+                CreatedAt = dateNow
+            };
+            db.Services.Add(serviceModel);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = service.Id }, service);
